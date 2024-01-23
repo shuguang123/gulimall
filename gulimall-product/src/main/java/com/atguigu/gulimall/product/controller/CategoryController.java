@@ -30,9 +30,9 @@ public class CategoryController {
      * 列表
      */
     @RequestMapping("/list/tree")
-    public List<CategoryEntity> list() {
+    public R list() {
         List<CategoryEntity> categoryEntities = categoryService.listWithTree();
-        return categoryEntities;
+        return R.ok().put("data", categoryEntities);
     }
 
     /**
@@ -70,8 +70,9 @@ public class CategoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds) {
-        categoryService.removeByIds(Arrays.asList(catIds));
+        // categoryService.removeByIds(Arrays.asList(catIds));
 
+        categoryService.removeMenuByIds(Arrays.asList(catIds));
         return R.ok();
     }
 }

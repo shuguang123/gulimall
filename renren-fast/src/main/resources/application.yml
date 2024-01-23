@@ -28,6 +28,16 @@ spring:
     throw-exception-if-no-handler-found: true
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+  application:
+    name: renren-fast
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.200:8848
+      config:
+        name: renren-fast
+        server-addr: 192.168.10.200:8848
+        namespace: 4ca264fb-5ac0-4139-8901-e0e92ec10df6
 #  resources:
 #    add-mappings: false
 
@@ -65,3 +75,4 @@ renren:
     # token有效时长，7天，单位秒
     expire: 604800
     header: token
+    

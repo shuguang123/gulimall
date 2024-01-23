@@ -38,6 +38,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
             .collect(Collectors.toList());
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> asList) {
+        // TODO 检查当前的菜单是否被别的地方所引用
+        baseMapper.deleteBatchIds(asList);
+    }
+
     public List<CategoryEntity> getChildren(CategoryEntity root, List<CategoryEntity> all) {
         return all.stream().filter(item -> item.getParentCid().equals(root.getCatId()))
             .peek(item -> item.setChildren(getChildren(item, all)))
