@@ -11,6 +11,13 @@ spring:
       discovery:
         server-addr: 192.168.10.200:8848
 
+    alicloud:
+      access-key: LTAI5tBPhvqmfRjEoSCmjr6B
+      secret-key: jDw1UUi06rpPl1O2nAIsOCePObaKes
+      oss:
+        endpoint: https://oss-cn-shanghai.aliyuncs.com
+        enabled: true
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -28,3 +35,6 @@ server:
 logging:
   level:
     com.atguigu.gulimall.product: debug
+    
+    
+
